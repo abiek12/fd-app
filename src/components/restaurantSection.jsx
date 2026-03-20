@@ -108,6 +108,7 @@ export const RestaurantSection = () => {
   };
 
   const onlineStatus = useOnlineStatus();
+  console.log("online status:", onlineStatus);
 
   if (!onlineStatus) {
     return (
