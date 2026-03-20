@@ -1,0 +1,19 @@
+{
+  "name": "food-delivery-app",
+  "version": "1.0.0",
+  "description": "This is a food delivery app built in react",
+  "license": "ISC",
+  "author": "Abhishek",
+  "type": "module",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "dependencies": {
+    "parcel": "^2.16.4",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^6.30.3"
+  }
+}
