@@ -1,11 +1,11 @@
 export const HeroSection = () => {
   return (
-    <section className="hero-section bg-primary-accent">
-      <div className="right-img-container">
+    <section className="hero-section bg-primary-accent grid grid-cols-12 grid-rows-2 gap-2">
+      <div className="right-img-container col-span-2 row-span-full">
         <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/testing/seo-home/Veggies_new.png" />
       </div>
 
-      <div className="top-container">
+      <div className="top-container col-start-3 col-end-11 row-span-1">
         <div className="title">Order food. Shop groceries. Swiggy it!</div>
         <div className="search-container">
           <div className="location-container">
@@ -87,7 +87,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="food-insta-cards-container">
+      <div className="food-insta-cards-container col-start-3 col-end-11 row-span-1">
         <div className="card">
           <div className="card-top-section">
             <h1 className="title">FOOD DELIVERY</h1>
@@ -152,7 +152,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="left-img-container">
+      <div className="left-img-container col-span-2 col-end-13 row-span-full">
         <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/testing/seo-home/Sushi_replace.png" />
       </div>
     </section>
