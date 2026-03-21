@@ -1,14 +1,16 @@
 export const HeroSection = () => {
   return (
-    <section className="hero-section bg-primary-accent grid grid-cols-12 grid-rows-2 gap-2">
+    <section className="hero-section bg-primary-accent grid grid-cols-12 grid-rows-2 gap-4 py-4 px-0">
       <div className="right-img-container col-span-2 row-span-full">
         <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/testing/seo-home/Veggies_new.png" />
       </div>
 
-      <div className="top-container col-start-3 col-end-11 row-span-1">
-        <div className="title">Order food. Shop groceries. Swiggy it!</div>
-        <div className="search-container">
-          <div className="location-container">
+      <div className="top-container col-start-3 col-end-11 row-span-1 flex flex-col justify-center items-center">
+        <div className="title text-secondary text-5xl font-semibold p-3">
+          Order food. Shop groceries. Swiggy it!
+        </div>
+        <div className="search-container flex gap-4 px-48 py-0">
+          <div className="input-container location-container grow shrink-0 basis-80">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -25,11 +27,11 @@ export const HeroSection = () => {
             </svg>
             <input
               type="search"
-              className="choose-location"
+              className="choose-location input"
               placeholder="Enter your delivery location"
             ></input>
             <svg
-              className="drop-down-btn"
+              className="drop-down-btn cursor-pointer"
               width="20"
               height="21"
               viewBox="0 0 20 21"
@@ -48,14 +50,14 @@ export const HeroSection = () => {
               ></path>
             </svg>
           </div>
-          <div className="restuarant-container">
+          <div className="input-container restuarant-container grow-0 shrink-0 basis-120">
             <input
               type="search"
-              className="search-bar"
+              className="search-bar input"
               placeholder="Search for restaurant, item or more"
             ></input>
             <svg
-              className="search-icon"
+              className="search-icon w-6"
               viewBox="0 0 512 512"
               xmlns="http://www.w3.org/2000/svg"
             >

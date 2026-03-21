@@ -26,4 +26,12 @@
   .nav-item {
     @apply text-base font-semibold leading-[21px] tracking-[-0.4px] text-secondary;
   }
+
+  .input-container {
+    @apply bg-primary-bg w-full h-16 rounded-2xl flex justify-center items-center gap-4 p-4 text-dull;
+  }
+
+  .input {
+    @apply w-full border-none text-base font-medium outline-0 leading-[21px];
+  }
 }
