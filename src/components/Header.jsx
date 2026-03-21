@@ -3,7 +3,7 @@ import { LOGO_URL } from "../utils/constants";
 
 export const Header = () => {
   return (
-    <header className="header flex justify-between items-center px-47 py-10 bg-amber-600">
+    <header className="header flex justify-between items-center px-47 py-10 bg-primary-accent">
       <div className="logo-container h-12 w-40">
         <Link to="/">
           <img
