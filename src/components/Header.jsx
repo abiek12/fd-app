@@ -3,8 +3,8 @@ import { LOGO_URL } from "../utils/constants";
 
 export const Header = () => {
   return (
-    <header className="header">
-      <div className="logo-container">
+    <header className="header flex justify-between items-center px-47 py-10 bg-amber-600">
+      <div className="logo-container h-12 w-40">
         <Link to="/">
           <img
             alt=""
@@ -12,28 +12,36 @@ export const Header = () => {
             loading="lazy"
             width="100%"
             src={LOGO_URL}
+            className="w-52"
           />
         </Link>
       </div>
 
-      <div className="nav-container">
+      <div className="nav-container flex justify-evenly items-center gap-8">
         <a href="" className="nav-item about-us">
           Swiggy Corporate
         </a>
+
         <a href="" className="nav-item partner-with-us">
           Partner with us
         </a>
+
         <div className="contact">
           <Link className="nav-item" to="/contact">
             Contact
           </Link>
         </div>
+
         <div className="about-us">
           <Link className="nav-item" to="/about-us">
             About Us
           </Link>
         </div>
-        <a href="" className="nav-item get-app-btn">
+
+        <a
+          href=""
+          className="nav-item flex gap-2 justify-center align-middle p-4 border border-secondary rounded-xl"
+        >
           Get the App
           <div className="icon-container">
             <svg
@@ -54,6 +62,7 @@ export const Header = () => {
             </svg>
           </div>
         </a>
+
         <div className="nav-item profile">
           <svg
             xmlns="http://www.w3.org/2000/svg"

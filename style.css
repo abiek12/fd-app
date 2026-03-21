@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+@theme {
+  /* Backgrounds */
+  --color-primary-bg: #fff;
+  --color-secondary-bg: rgb(255, 82, 0);
+  --color-tertiary-bg: rgb(241, 241, 245);
+  --color-off-white-bg: #dcdcdc;
+
+  /* Text Colors */
+  --color-primary: #02060c;
+  --color-secondary: #fff;
+  --color-dull: rgba(25, 25, 25, 0.8);
+  --color-off-white: #bdbdbd;
+  --color-off-white-font: #636363;
+
+  /* Accent Colors */
+  --color-primary-accent: rgb(255, 82, 0);
+  --color-secondary-accent: rgb(9, 120, 9);
+
+  /* Font */
+  --font-primary: Gilroy, Arial, "Helvetica Neue", sans-serif;
+}
+
+@layer components {
+  .nav-item {
+    @apply text-base font-semibold leading-[21px] tracking-[-0.4px] text-secondary;
+  }
+}
