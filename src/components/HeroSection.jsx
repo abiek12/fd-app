@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 export const HeroSection = () => {
   return (
-    <section className="hero-section bg-primary-accent grid grid-cols-12 grid-rows-2 gap-4 py-4 px-0">
+    <section className="hero-section bg-primary-accent grid grid-cols-12 grid-rows-2 gap-2 py-4 px-0">
       <div className="right-img-container col-span-2 row-span-full">
         <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/testing/seo-home/Veggies_new.png" />
       </div>
@@ -91,68 +93,30 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="food-insta-cards-container col-start-3 col-end-11 row-span-1">
-        <div className="card">
-          <div className="card-top-section">
-            <h1 className="title">FOOD DELIVERY</h1>
-            <h2 className="desc">FROM RESTAURANTS</h2>
-            <h4 className="offer">UPTO 60% OFF</h4>
-          </div>
-          <div className="card-bottom-section">
-            <a href="" className="explore-btn">
-              <div className="explore">Explore</div>
-              <div className="icon-container">
-                <svg
-                  width="21"
-                  height="21"
-                  viewBox="0 0 21 21"
-                  fill="none"
-                  aria-label="rating-up-down-icon"
-                  aria-hidden="false"
-                  strokecolor="#FFFFFF"
-                  fillcolor="#FFFFFF"
-                >
-                  <path
-                    d="M12.634 3.45a1 1 0 0 0-1.365 1.462l4.827 4.506c.238.221.44.41.614.577H2.996a1 1 0 0 0 0 2h13.777c-.186.18-.41.39-.677.64l-4.769 4.45a1 1 0 0 0 1.365 1.462l4.817-4.495c.546-.51 1.03-.96 1.367-1.376.365-.449.664-.979.664-1.65 0-.672-.299-1.201-.664-1.65-.338-.415-.821-.866-1.367-1.376z"
-                    fill="#FFFFFF"
-                    fillOpacity="0.92"
-                  ></path>
-                </svg>
-              </div>
-            </a>
-            <div className="food-img"></div>
-          </div>
+      <div className="food-insta-cards-container col-start-3 col-end-11 row-span-1 flex">
+        <div className="food-card">
+          <Link to="/">
+            <img
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/23/ec86a309-9b06-48e2-9adc-35753f06bc0a_Food3BU.png"
+              alt="Food-delivery-card"
+            />
+          </Link>
         </div>
-        <div className="card">
-          <div className="card-top-section">
-            <h1 className="title">INSTAMART</h1>
-            <h2 className="desc">INSTANT GROCERY</h2>
-            <h4 className="offer">UPTO 60% OFF</h4>
-          </div>
-          <div className="card-bottom-section">
-            <a href="" className="explore-btn">
-              <div className="explore">Explore</div>
-              <div className="icon-container">
-                <svg
-                  width="21"
-                  height="21"
-                  viewBox="0 0 21 21"
-                  fill="none"
-                  aria-label="rating-up-down-icon"
-                  aria-hidden="false"
-                  strokecolor="#FFFFFF"
-                  fillcolor="#FFFFFF"
-                >
-                  <path
-                    d="M12.634 3.45a1 1 0 0 0-1.365 1.462l4.827 4.506c.238.221.44.41.614.577H2.996a1 1 0 0 0 0 2h13.777c-.186.18-.41.39-.677.64l-4.769 4.45a1 1 0 0 0 1.365 1.462l4.817-4.495c.546-.51 1.03-.96 1.367-1.376.365-.449.664-.979.664-1.65 0-.672-.299-1.201-.664-1.65-.338-.415-.821-.866-1.367-1.376z"
-                    fill="#FFFFFF"
-                    fillOpacity="0.92"
-                  ></path>
-                </svg>
-              </div>
-            </a>
-            <div className="food-img"></div>
-          </div>
+        <div className="instamart-card">
+          <Link to="/">
+            <img
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/23/b5c57bbf-df54-4dad-95d1-62e3a7a8424d_IM3BU.png"
+              alt="instamart-card"
+            />
+          </Link>
+        </div>
+        <div className="dine-out-card">
+          <Link to="/">
+            <img
+              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/23/b6d9b7ab-91c7-4f72-9bf2-fcd4ceec3537_DO3BU.png"
+              alt="dine-out-card"
+            />
+          </Link>
         </div>
       </div>
 
