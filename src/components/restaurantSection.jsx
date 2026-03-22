@@ -137,7 +137,7 @@ export const RestaurantSection = () => {
       <div className="filter-container flex justify-start items-center gap-4">
         <div className="select-container">
           <select
-            className="sort-by bg-primary-bg border border-solid border-black rounded-[0.65rem] py-2 px-4 w-full max-w-30 min-w-20 cursor-pointer text-[0.92rem] flex justify-center items-center gap-[0.65rem]"
+            className="sort-by bg-primary-bg border border-solid border-off-white-font rounded-[0.65rem] py-2 px-4 w-full max-w-30 min-w-20 cursor-pointer text-[0.92rem] flex justify-center items-center gap-[0.65rem]"
             value={selectedValue}
             onChange={handleSelectChange}
             name=""
@@ -155,7 +155,7 @@ export const RestaurantSection = () => {
         <div className="search-container">
           <input
             type="text"
-            className="search w-full h-full py-1 px-4 rounded-[0.65rem] border border-solid border-black"
+            className="search w-full h-full py-1 px-4 rounded-[0.65rem] border border-solid border-off-white-font"
             placeholder="Search for restaurant"
             value={searchInput}
             onChange={handleSearch}

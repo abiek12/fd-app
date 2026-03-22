@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
   return (
-    <section className="hero-section bg-primary-accent grid grid-cols-12 grid-rows-2 gap-2 py-4 px-0">
+    <section className="hero-section bg-primary-accent grid grid-cols-12 grid-rows-2 gap-2 py-4 px-0 leading-normal tracking-[-0.5px]">
       <div className="right-img-container col-span-2 row-span-full">
         <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/testing/seo-home/Veggies_new.png" />
       </div>

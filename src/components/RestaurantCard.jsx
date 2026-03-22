@@ -13,10 +13,18 @@ export const RestaurantCard = (props) => {
   } = props?.item;
 
   return (
-    <section className="restaurant-card">
-      <div className="food-img-container">
-        <img className="restaurant" src={`${CDN_URL}/${cloudinaryImageId}`} />
-        <div className="offer">
+    <section className="restaurant-card rounded-4xl w-64 h-84 overflow-hidden bg-tertiary-bg cursor-pointer leading-normal tracking-[-0.5px]">
+      <div
+        className="food-img-container w-full h-1/2 relative text-[1.25rem] font-extrabold text-secondary after:pointer-events-none after:absolute after:inset-0 after:content-[''] after:bg-linear-to-t 
+            after:from-black/65 after:from-0% 
+            after:via-black/25 after:via-35% 
+            after:to-transparent after:to-60%"
+      >
+        <img
+          className="restaurant w-full h-full"
+          src={`${CDN_URL}/${cloudinaryImageId}`}
+        />
+        <div className="offer absolute bottom-0 p-4 z-99">
           {aggregatedOffer?.header && (
             <div className="offer-head">{aggregatedOffer?.header}</div>
           )}
@@ -25,9 +33,11 @@ export const RestaurantCard = (props) => {
           )}
         </div>
       </div>
-      <div className="details">
-        <h2 className="restaurant-name">{name}</h2>
-        <div className="ratings-delivery-time-container">
+      <div className="details flex flex-col items-start gap-2 p-4">
+        <h2 className="restaurant-name text-xl font-bold whitespace-nowrap overflow-hidden text-ellipsis w-56">
+          {name}
+        </h2>
+        <div className="ratings-delivery-time-container flex justify-start gap-[0.5 rem]">
           <svg
             width="20"
             height="20"
@@ -66,7 +76,9 @@ export const RestaurantCard = (props) => {
           </h4>
           <h4 className="delivery-time">{deliveryTimeString}</h4>
         </div>
-        <div className="cuisines">{cuisines.join(", ")}</div>
+        <div className="cuisines whitespace-nowrap overflow-hidden text-ellipsis w-56">
+          {cuisines.join(", ")}
+        </div>
         <div className="location">{locality}</div>
       </div>
     </section>

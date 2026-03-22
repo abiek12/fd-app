@@ -24,7 +24,7 @@
 
 @layer components {
   .nav-item {
-    @apply text-base font-semibold leading-[21px] tracking-[-0.4px] text-secondary;
+    @apply text-base font-semibold leading-5.25 tracking-[-0.4px] text-secondary;
   }
 
   .input-container {
@@ -32,6 +32,6 @@
   }
 
   .input {
-    @apply w-full border-none text-base font-medium outline-0 leading-[21px];
+    @apply w-full border-none text-base font-medium outline-0 leading-5.25;
   }
 }
