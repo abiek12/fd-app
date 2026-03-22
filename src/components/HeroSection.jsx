@@ -5,12 +5,14 @@ export const HeroSection = () => {
         <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/testing/seo-home/Veggies_new.png" />
       </div>
 
-      <div className="top-container col-start-3 col-end-11 row-span-1 flex flex-col justify-center items-center">
-        <div className="title text-secondary text-5xl font-semibold p-3">
-          Order food. Shop groceries. Swiggy it!
+      <div className="top-container col-start-3 col-end-11 row-span-1 flex flex-col justify-center items-center gap-4">
+        <div className="title text-secondary text-5xl font-semibold p-3 text-center">
+          Order food. Shop groceries.
+          <br className="mb-4" />
+          Swiggy it!
         </div>
-        <div className="search-container flex gap-4 px-48 py-0">
-          <div className="input-container location-container grow shrink-0 basis-80">
+        <div className="search-container flex justify-center items-center gap-4 px-48 py-0">
+          <div className="input-container location-container grow-0 shrink-0 basis-80">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
