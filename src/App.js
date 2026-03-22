@@ -8,7 +8,6 @@ import {
   Outlet,
   useLocation,
 } from "react-router-dom";
-import RestaurantMenu from "./components/RestaurantMenu";
 import { Footer } from "./components/Footer";
 import { lazy, Suspense } from "react";
 
