@@ -162,11 +162,11 @@ export const RestaurantSection = () => {
           />
         </div>
       </div>
-      <div className="restaurant-container">
+      <div className="restaurant-container flex flex-wrap gap-4">
         {filteredList.map((item) => {
           return (
             <Link
-              className="link-container"
+              className="link-container no-underline text-inherit"
               to={`/restaurant/${item.id}`}
               key={item.id}
             >
