@@ -13,7 +13,7 @@ export const RestaurantCard = (props) => {
   } = props?.item;
 
   return (
-    <section className="restaurant-card rounded-4xl w-64 h-84 overflow-hidden bg-tertiary-bg cursor-pointer leading-normal tracking-[-0.5px]">
+    <section className="restaurant-card rounded-4xl w-64 h-76 overflow-hidden cursor-pointer leading-normal tracking-[-0.5px]">
       <div
         className="food-img-container w-full h-1/2 relative text-[1.25rem] font-extrabold text-secondary after:pointer-events-none after:absolute after:inset-0 after:content-[''] after:bg-linear-to-t 
             after:from-black/65 after:from-0% 
@@ -33,11 +33,11 @@ export const RestaurantCard = (props) => {
           )}
         </div>
       </div>
-      <div className="details flex flex-col items-start gap-2 p-4">
+      <div className="details bg-tertiary-bg flex flex-col items-start gap-1 p-4">
         <h2 className="restaurant-name text-xl font-bold whitespace-nowrap overflow-hidden text-ellipsis w-56">
           {name}
         </h2>
-        <div className="ratings-delivery-time-container flex justify-start gap-[0.5 rem]">
+        <div className="ratings-delivery-time-container flex justify-start items-center gap-1 text-base font-medium mb-2">
           <svg
             width="20"
             height="20"
@@ -76,10 +76,12 @@ export const RestaurantCard = (props) => {
           </h4>
           <h4 className="delivery-time">{deliveryTimeString}</h4>
         </div>
-        <div className="cuisines whitespace-nowrap overflow-hidden text-ellipsis w-56">
+        <div className="cuisines whitespace-nowrap overflow-hidden text-ellipsis w-56 text-[0.92rem] text-off-white-font">
           {cuisines.join(", ")}
         </div>
-        <div className="location">{locality}</div>
+        <div className="location text-[0.92rem] text-off-white-font">
+          {locality}
+        </div>
       </div>
     </section>
   );
