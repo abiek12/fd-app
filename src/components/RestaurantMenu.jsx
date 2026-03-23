@@ -44,14 +44,14 @@ const RestaurantMenu = () => {
   }
 
   return (
-    <div className="restaurant-menu-section">
+    <div className="restaurant-menu-section px-47 py-30 flex flex-col justify-center gap-8">
       <h1 className="restuarant-name">{apiRes.singleItem?.name}</h1>
-      <div className="shadow-container">
-        <div className="restaurant-details-container">
-          <div className="det-container">
-            <div className="top-container">
-              <div className="top-sub">
-                <div className="rating-container">
+      <div className="shadow-container p-4 rounded-2xl bg-[linear-gradient(to_top,var(--color-off-white-bg),var(--color-primary-bg))]">
+        <div className="restaurant-details-container flex flex-col bg-primary-bg rounded-2xl border border-solid border-off-white-bg">
+          <div className="det-container flex flex-col gap-4 py-6 px-5">
+            <div className="top-container flex flex-col gap-[0.65rem] font-semibold text-[0.96rem]">
+              <div className="top-sub flex justify-start items-center gap-4">
+                <div className="rating-container flex justify-center items-center gap-2">
                   <svg
                     width="20"
                     height="20"
@@ -103,11 +103,12 @@ const RestaurantMenu = () => {
               </div>
             </div>
           </div>
-          <div className="res-bottom-container">
-            <div className="swiggy-one-logo">
+          <div className="res-bottom-container py-3 px-4 flex items-center gap-2 border-t border-solid border-off-white-bg text-primary-accent text-[0.85rem]">
+            <div className="swiggy-one-logo h-4">
               <img
                 src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_86,h_30/v1634558776/swiggy_one/OneLogo_3x.png"
                 alt="swiggy-one"
+                className="w-full h-full"
               />
             </div>
             <h4>Free delivery on orders above ₹199</h4>
