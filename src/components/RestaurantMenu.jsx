@@ -89,7 +89,7 @@ const RestaurantMenu = () => {
                 </div>
                 <div className="for-two">{apiRes.singleItem?.costForTwo}</div>
               </div>
-              <div className="cusines">
+              <div className="cusines text-primary-accent text-[0.9rem]">
                 {apiRes.singleItem?.cuisines.join(", ")}
               </div>
             </div>
