@@ -44,8 +44,10 @@ const RestaurantMenu = () => {
   }
 
   return (
-    <div className="restaurant-menu-section px-47 py-30 flex flex-col justify-center gap-8">
-      <h1 className="restuarant-name">{apiRes.singleItem?.name}</h1>
+    <div className="restaurant-menu-section px-130 py-30 flex flex-col justify-center gap-8">
+      <h1 className="restuarant-name text-3xl font-bold">
+        {apiRes.singleItem?.name}
+      </h1>
       <div className="shadow-container p-4 rounded-2xl bg-[linear-gradient(to_top,var(--color-off-white-bg),var(--color-primary-bg))]">
         <div className="restaurant-details-container flex flex-col bg-primary-bg rounded-2xl border border-solid border-off-white-bg">
           <div className="det-container flex flex-col gap-4 py-6 px-5">
@@ -93,10 +95,12 @@ const RestaurantMenu = () => {
                 {apiRes.singleItem?.cuisines.join(", ")}
               </div>
             </div>
-            <div className="location-delivery-details">
+            <div className="location-delivery-details flex flex-col gap-2 font-semibold">
               <div className="outlet">
                 Outlet
-                <span>{apiRes.singleItem?.areaName}</span>
+                <span className="font-normal ml-2">
+                  {apiRes.singleItem?.areaName}
+                </span>
               </div>
               <div className="avg-delivery-time">
                 {apiRes.singleItem?.sla?.slaString}
@@ -116,61 +120,83 @@ const RestaurantMenu = () => {
         </div>
       </div>
 
-      <div className="deals-section">
-        <h2>Deals for you</h2>
-        <div className="deals-container">
-          <div className="item">
+      <div className="deals-section my-4 mx-0 text-[0.88rem] font-extrabold">
+        <h2 className="text-xl">Deals for you</h2>
+        <div className="deals-container flex gap-4 overflow-x-scroll p-4">
+          <div className="item flex justify-center items-center gap-3 whitespace-nowrap cursor-pointer p-4 border border-solid border-off-white-bg rounded-2xl">
             <div className="deal-logo">
               <img
+                className="w-12 h-12"
                 src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/MARKETING_BANNERS/IMAGES/OFFERS/2026/1/12/96c82e26-2baa-4216-985d-f97a215fdde2_d07196b25b85d1fd9951e10c255ab737.avif"
                 alt="30%off"
               />
             </div>
-            <div className="deal-text">
-              <div className="deal-title">Extra ₹30 Off</div>
-              <div className="deal-desc">NO CODE REQUIRED | ABOVE ₹99</div>
+            <div className="deal-text flex flex-col gap-[0.2rem] ">
+              <div className="deal-title text-4 font-extrabold">
+                Extra ₹30 Off
+              </div>
+              <div className="deal-desc text-[0.8rem] text-off-white-font">
+                NO CODE REQUIRED | ABOVE ₹99
+              </div>
             </div>
           </div>
           <div className="item">
             <div className="deal-logo">
               <img
+                className="w-12 h-12"
                 src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/MARKETING_BANNERS/IMAGES/OFFERS/2026/1/12/96c82e26-2baa-4216-985d-f97a215fdde2_d07196b25b85d1fd9951e10c255ab737.avif"
                 alt="30%off"
               />
             </div>
-            <div className="deal-text">
-              <div className="deal-title">Extra ₹30 Off</div>
-              <div className="deal-desc">NO CODE REQUIRED | ABOVE ₹99</div>
+            <div className="deal-text flex flex-col gap-[0.2rem] ">
+              <div className="deal-title text-4 font-extrabold">
+                Extra ₹30 Off
+              </div>
+              <div className="deal-desc text-[0.8rem] text-off-white-font">
+                NO CODE REQUIRED | ABOVE ₹99
+              </div>
             </div>
           </div>
           <div className="item">
             <div className="deal-logo">
               <img
+                className="w-12 h-12"
                 src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/offers/DealRush_Offer_Icon.png"
                 alt="50%off"
               />
             </div>
-            <div className="deal-text">
-              <div className="deal-title">Extra ₹50 Off</div>
-              <div className="deal-desc">NO CODE REQUIRED</div>
+            <div className="deal-text flex flex-col gap-[0.2rem] ">
+              <div className="deal-title text-4 font-extrabold">
+                Extra ₹50 Off
+              </div>
+              <div className="deal-desc text-[0.8rem] text-off-white-font">
+                NO CODE REQUIRED
+              </div>
             </div>
           </div>
           <div className="item">
             <div className="deal-logo">
               <img
+                className="w-12 h-12"
                 src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/offers/generic"
                 alt="upto"
               />
             </div>
-            <div className="deal-text">
-              <div className="deal-title">50% Off Upto ₹100</div>
-              <div className="deal-desc">NO CODE REQUIRED | ABOVE ₹99</div>
+            <div className="deal-text flex flex-col gap-[0.2rem] ">
+              <div className="deal-title text-4 font-extrabold">
+                50% Off Upto ₹100
+              </div>
+              <div className="deal-desc text-[0.8rem] text-off-white-font">
+                NO CODE REQUIRED | ABOVE ₹99
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <p className="menu-text">MENU</p>
+      <p className="menu-text text-center font-bold text-[0.9rem] text-dull">
+        MENU
+      </p>
 
       <div className="filter-section">
         <div className="search-container">
