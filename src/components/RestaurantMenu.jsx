@@ -44,7 +44,7 @@ const RestaurantMenu = () => {
   }
 
   return (
-    <div className="restaurant-menu-section px-130 py-30 flex flex-col justify-center gap-8">
+    <div className="restaurant-menu-section px-130 py-30 flex flex-col justify-center gap-6">
       <h1 className="restuarant-name text-3xl font-bold">
         {apiRes.singleItem?.name}
       </h1>
@@ -123,7 +123,7 @@ const RestaurantMenu = () => {
       <div className="deals-section my-4 mx-0 text-[0.88rem] font-extrabold">
         <h2 className="text-xl">Deals for you</h2>
         <div className="deals-container flex gap-4 overflow-x-scroll p-4">
-          <div className="item flex justify-center items-center gap-3 whitespace-nowrap cursor-pointer p-4 border border-solid border-off-white-bg rounded-2xl">
+          <div className="item grow-4 shrink-0 flex justify-center items-center gap-3 whitespace-nowrap cursor-pointer p-4 border border-solid border-off-white-bg rounded-2xl">
             <div className="deal-logo">
               <img
                 className="w-12 h-12"
@@ -140,7 +140,7 @@ const RestaurantMenu = () => {
               </div>
             </div>
           </div>
-          <div className="item">
+          <div className="item grow-4 shrink-0 flex justify-center items-center gap-3 whitespace-nowrap cursor-pointer p-4 border border-solid border-off-white-bg rounded-2xl">
             <div className="deal-logo">
               <img
                 className="w-12 h-12"
@@ -157,7 +157,7 @@ const RestaurantMenu = () => {
               </div>
             </div>
           </div>
-          <div className="item">
+          <div className="item grow-4 shrink-0 flex justify-center items-center gap-3 whitespace-nowrap cursor-pointer p-4 border border-solid border-off-white-bg rounded-2xl">
             <div className="deal-logo">
               <img
                 className="w-12 h-12"
@@ -174,7 +174,7 @@ const RestaurantMenu = () => {
               </div>
             </div>
           </div>
-          <div className="item">
+          <div className="item grow-4 shrink-0 flex justify-center items-center gap-3 whitespace-nowrap cursor-pointer p-4 border border-solid border-off-white-bg rounded-2xl">
             <div className="deal-logo">
               <img
                 className="w-12 h-12"
