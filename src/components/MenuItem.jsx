@@ -68,7 +68,7 @@ const MenuItem = (props) => {
             alt="item-logo"
           />
         </div>
-        <button className="add-to-cart-btn cursor-pointer absolute top-34 py-[0.8rem] px-12 rounded-lg border border-solid border-off-white bg-primary-bg text-[1.05rem] font-semibold text-secondary-accent hover:bg-off-white-bg hover:border-none">
+        <button className="add-to-cart-btn cursor-pointer absolute top-32 py-[0.8rem] px-12 rounded-lg border border-solid border-off-white bg-primary-bg text-[1.05rem] font-semibold text-secondary-accent hover:bg-off-white-bg hover:border-none">
           ADD
         </button>
       </div>

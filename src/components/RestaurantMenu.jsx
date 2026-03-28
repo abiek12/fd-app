@@ -263,12 +263,12 @@ const RestaurantMenu = () => {
                 {isOpen &&
                   item?.card?.card?.itemCards.map((i, idx) => (
                     <div key={idx} className="ind-item">
+                      <hr className="my-8 text-gray-200" />
                       <MenuItem item={i} />
-                      <hr />
                     </div>
                   ))}
               </div>
-              <div className="divider border-t border-solid border-t-gray-300"></div>
+              <div className="divider my-4 border-t border-solid border-t-gray-300"></div>
             </div>
           );
         })}
