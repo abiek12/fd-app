@@ -3,17 +3,19 @@ import { CDN_URL } from "../utils/constants";
 const MenuItem = (props) => {
   const item = props?.item?.card?.info;
   return (
-    <div className="menu-item-container">
-      <div className="menu-item-left">
-        <div className="item-name">{item.name}</div>
-        <div className="price">
+    <div className="menu-item-container flex justify-between items-start py-4 px-0 ">
+      <div className="menu-item-left flex flex-col gap-2">
+        <div className="item-name text-[1.2rem] font-semibold leading-5.5 text-gray-900">
+          {item.name}
+        </div>
+        <div className="price flex gap-2 items-center justify-start text-gray-900 font-semibold">
           {/* <div className="actual-price">
             ₹<span>{"1390"}</span>
           </div> */}
           <div className="offer-price">
             ₹{(item?.price || item?.defaultPrice) / 100}
           </div>
-          <div className="offer-logo">
+          <div className="offer-logo flex gap-2 items-center justify-start text-gray-900 font-semibold">
             <svg
               width="14"
               height="14"
@@ -30,7 +32,7 @@ const MenuItem = (props) => {
             </svg>
           </div>
         </div>
-        <div className="ratings">
+        <div className="ratings mt-2 flex justify-start items-center gap-[0.2rem]">
           <div className="star">
             <svg
               width="14"
@@ -47,18 +49,28 @@ const MenuItem = (props) => {
               ></path>
             </svg>
           </div>
-          <div className="rating-value">
-            <span className="stars">{"4.7"}</span>
-            <span className="total-reviews">{"(2.7K+)"}</span>
+          <div className="rating-value flex gap-[0.1rem] text-[0.8rem] font-semibold">
+            <span className="stars text-secondary-accent">{"4.7"}</span>
+            <span className="total-reviews font-medium text-off-white-font">
+              {"(2.7K+)"}
+            </span>
           </div>
         </div>
-        <div className="menu-item-desc">{item?.description}</div>
-      </div>
-      <div className="menu-item-right">
-        <div className="item-img-container">
-          <img src={`${CDN_URL}/${item?.imageId}`} alt="item-logo" />
+        <div className="menu-item-desc mt-2 font-normal leading-5.25 text-off-white-font">
+          {item?.description}
         </div>
-        <button className="add-to-cart-btn">ADD</button>
+      </div>
+      <div className="menu-item-right relative flex justify-center items-center">
+        <div className="item-img-container w-48 h-40">
+          <img
+            className="w-full h-full rounded-2xl"
+            src={`${CDN_URL}/${item?.imageId}`}
+            alt="item-logo"
+          />
+        </div>
+        <button className="add-to-cart-btn cursor-pointer absolute top-34 py-[0.8rem] px-12 rounded-lg border border-solid border-off-white bg-primary-bg text-[1.05rem] font-semibold text-secondary-accent hover:bg-off-white-bg hover:border-none">
+          ADD
+        </button>
       </div>
     </div>
   );
