@@ -263,7 +263,7 @@ const RestaurantMenu = () => {
                 {isOpen &&
                   item?.card?.card?.itemCards.map((i, idx) => (
                     <div key={idx} className="ind-item">
-                      <hr className="my-8 text-gray-200" />
+                      <hr className="text-tertiary-bg my-8 mx-0" />
                       <MenuItem item={i} />
                     </div>
                   ))}
@@ -274,7 +274,9 @@ const RestaurantMenu = () => {
         })}
       </div>
 
-      <div className="menu-items-footer">END</div>
+      <div className="menu-items-footer bg-off-white-bg py-8 px-4 flex justify-center items-center font-semibold text-[0.9rem] text-gray-700">
+        END
+      </div>
     </div>
   );
 };
