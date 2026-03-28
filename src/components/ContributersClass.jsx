@@ -22,15 +22,22 @@ class Contributers extends Component {
     console.log("Child component rendering!");
     const { name, email, bio, website, avatar } = this.props.details;
     return (
-      <div className="contributer-section">
-        <div className="profile">
-          <img src={avatar} alt={name} className="avatar" />
+      <div className="contributer-section flex items-center justify-start gap-4 border border-solid border-off-white rounded-2xl p-4 cursor-pointer hover:bg-off-white-bg">
+        <div className="profile w-37.5 h-37.5 rounded-[50%] overflow-hidden">
+          <img
+            src={avatar}
+            alt={name}
+            className="avatar w-full h-full object-cover"
+          />
         </div>
-        <div className="details">
+        <div className="details flex flex-col gap-2">
           <h1 className="name">{name}</h1>
           <p className="email">{email}</p>
           <p className="bio">{bio}</p>
-          <a href={website} className="website">
+          <a
+            href={website}
+            className="website text-primary hover:text-primary-accent"
+          >
             Website
           </a>
         </div>

@@ -64,8 +64,10 @@ class About extends Component {
     };
     console.log("Parent component rendering!");
     return (
-      <div className="about-container">
-        <h1 className="page-title">Contributers</h1>
+      <div className="about-container py-20 px-47 h-[75vh]">
+        <h1 className="page-title text-2xl font-semibold my-4 mx-0">
+          Contributers
+        </h1>
         <Contributers details={stateData} />
       </div>
     );
