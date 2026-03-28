@@ -230,20 +230,21 @@ const RestaurantMenu = () => {
           const isOpen = openMap[index];
           return (
             <div key={index} className="container">
-              <div className="menu-item">
+              <div className="menu-item py-0 px-4">
                 <button
                   onClick={() => toggeCollapse(index)}
-                  className="collapse-btn"
+                  className="collapse-btn w-full border-none bg-none flex justify-between items-center mt-2 mr-0 mb-8 ml-0 text-[1.1rem] font-extrabold cursor-pointer"
                 >
                   <div className="menu-group-title">
                     {`${item?.card?.card?.title} (${item?.card?.card?.itemCards?.length})`}
                   </div>
                   <div
-                    className={`menu-group-collapse-arrow  ${
-                      isOpen ? "rotateArrow" : ""
+                    className={`transition-all duration-200 ease-in-out  ${
+                      isOpen ? "transform rotate-180" : ""
                     }`}
                   >
                     <svg
+                      className="h-4 w-4"
                       xmlns="http://www.w3.org/2000/svg"
                       shapeRendering="geometricPrecision"
                       textRendering="geometricPrecision"
@@ -267,7 +268,7 @@ const RestaurantMenu = () => {
                     </div>
                   ))}
               </div>
-              <div className="divider"></div>
+              <div className="divider border-t border-solid border-t-gray-300"></div>
             </div>
           );
         })}
