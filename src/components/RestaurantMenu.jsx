@@ -198,23 +198,29 @@ const RestaurantMenu = () => {
         MENU
       </p>
 
-      <div className="filter-section">
-        <div className="search-container">
+      <div className="filter-section flex flex-col w-full gap-4">
+        <div className="search-container flex w-full">
           <input
-            className="search"
+            className="search w-full py-3 px-2 rounded-[0.65rem] border-none bg-off-white-bg cursor-pointer placeholder:text-[0.9rem] placeholder:font-semibold text-center text-dull"
             placeholder="Search for dishes"
             type="text"
           />
         </div>
-        <div className="filter-container">
+        <div className="filter-container w-full flex justify-start items-center gap-2 text-sm">
           <div className="veg-container">
-            <button className="veg-btn">Veg</button>
+            <button className="veg-btn text-green-600 py-[0.2rem] px-[0.8rem] rounded-2xl border border-solid border-off-white-bg cursor-pointer bg-primary-bg hover:bg-tertiary-bg hover:border-off-white">
+              Veg
+            </button>
           </div>
           <div className="non-veg-container">
-            <button className="non-veg-btn">Non</button>
+            <button className="non-veg-btn text-red-600 py-[0.4rem] px-[0.8rem] rounded-2xl border border-solid border-off-white-bg cursor-pointer bg-primary-bg hover:bg-tertiary-bg hover:border-off-white">
+              Non
+            </button>
           </div>
           <div className="best-seller">
-            <button className="best-seller-btn">Bestseller</button>
+            <button className="best-seller-btn text-gray-600 py-[0.4rem] px-[0.8rem] rounded-2xl border border-solid border-off-white-bg cursor-pointer bg-primary-bg hover:bg-tertiary-bg hover:border-off-white">
+              Bestseller
+            </button>
           </div>
         </div>
       </div>
