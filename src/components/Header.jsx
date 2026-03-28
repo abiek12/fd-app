@@ -18,14 +18,6 @@ export const Header = () => {
       </div>
 
       <div className="nav-container flex justify-evenly items-center gap-8">
-        <a href="" className="nav-item about-us">
-          Swiggy Corporate
-        </a>
-
-        <a href="" className="nav-item partner-with-us">
-          Partner with us
-        </a>
-
         <div className="contact">
           <Link className="nav-item" to="/contact">
             Contact
