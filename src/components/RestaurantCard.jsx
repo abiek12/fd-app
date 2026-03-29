@@ -86,3 +86,23 @@ export const RestaurantCard = (props) => {
     </section>
   );
 };
+
+export const withFoodTypeLabel = (RestaurantCard) => {
+  return (props) => {
+    const veg = props.item.veg;
+    return (
+      <div className="relative">
+        {veg ? (
+          <h1 className="absolute top-2 z-99 text-sm font-semibold bg-black px-6 py-1 text-white rounded-lg">
+            Veg
+          </h1>
+        ) : (
+          <h1 className="absolute top-2 z-99 text-sm font-semibold bg-black px-6 py-1 text-white rounded-lg">
+            Non-Veg
+          </h1>
+        )}
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};

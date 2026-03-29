@@ -1,4 +1,4 @@
-import { RestaurantCard } from "./RestaurantCard";
+import { RestaurantCard, withFoodTypeLabel } from "./RestaurantCard";
 import { allRestaurants } from "../utils/mockData";
 import { useEffect, useState } from "react";
 import { NAMASTE_DEV_BACKEND_URL } from "../utils/constants";
@@ -14,6 +14,8 @@ export const RestaurantSection = () => {
   const [filteredList, setFilteredList] = useState([]);
   const [searchInput, setSearchInput] = useState(data);
   const [apiReqStatus, setStatus] = useState(ApiFetchStatus.LOADING);
+
+  const RestaurantCardWithLabel = withFoodTypeLabel(RestaurantCard);
 
   const options = [
     { id: 1, label: "Sort By", value: "" },
@@ -53,6 +55,7 @@ export const RestaurantSection = () => {
           locality: i.info.locality,
           aggregatedOffer: i.info.aggregatedDiscountInfoV3,
           deliveryTimeString: i.info.sla.slaString,
+          veg: i.info.veg,
         };
       });
 
@@ -164,13 +167,14 @@ export const RestaurantSection = () => {
       </div>
       <div className="restaurant-container flex flex-wrap gap-4">
         {filteredList.map((item) => {
+          console.log(item);
           return (
             <Link
               className="link-container no-underline text-inherit"
               to={`/restaurant/${item.id}`}
               key={item.id}
             >
-              <RestaurantCard item={item} />
+              <RestaurantCardWithLabel item={item} />
             </Link>
           );
         })}
