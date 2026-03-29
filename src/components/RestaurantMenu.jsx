@@ -29,7 +29,7 @@ const RestaurantMenu = () => {
 
   const toggeCollapse = (index) => {
     setOpenMap((prev) => ({
-      ...prev,
+      [prev]: false,
       [index]: !prev[index],
     }));
   };

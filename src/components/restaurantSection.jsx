@@ -167,7 +167,6 @@ export const RestaurantSection = () => {
       </div>
       <div className="restaurant-container flex flex-wrap gap-4">
         {filteredList.map((item) => {
-          console.log(item);
           return (
             <Link
               className="link-container no-underline text-inherit"
