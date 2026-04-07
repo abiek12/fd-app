@@ -9,17 +9,26 @@ import {
   useLocation,
 } from "react-router-dom";
 import { Footer } from "./components/Footer";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, use, useEffect, useState } from "react";
 import UserContext from "./utils/UserContext";
 
 // App layout component
 const AppLayout = () => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  useEffect(() => {
+    const user = {
+      name: "Abhishek",
+      email: "abhishek@gmail.com",
+    };
+    setLoggedInUser(user);
+  }, []);
 
   const shouldRenderFooter = !currentPath.startsWith("/restaurant");
   return (
-    <UserContext.Provider>
+    <UserContext.Provider value={loggedInUser}>
       <div className="app">
         <Header />
         <Outlet />
