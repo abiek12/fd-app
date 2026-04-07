@@ -6,3 +6,7 @@ export const LOGO_URL =
 export const API_URL = "https://www.swiggy.com/dapi";
 export const NAMASTE_DEV_BACKEND_URL = "https://namastedev.com/api/v1";
 export const GIT_HUB_URL = "https://api.github.com/users/abiek12";
+export const DEFAULT_USER = {
+  name: "User",
+  email: "default@gmail.com",
+};
