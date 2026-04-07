@@ -28,7 +28,7 @@ const AppLayout = () => {
 
   const shouldRenderFooter = !currentPath.startsWith("/restaurant");
   return (
-    <UserContext.Provider value={loggedInUser}>
+    <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
       <div className="app">
         <Header />
         <Outlet />

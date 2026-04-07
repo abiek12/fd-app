@@ -4,7 +4,7 @@ import { useContext } from "react";
 import UserContext from "../utils/UserContext";
 
 export const Header = () => {
-  const data = useContext(UserContext);
+  const { loggedInUser } = useContext(UserContext);
   return (
     <header className="header flex justify-between items-center px-47 py-10 bg-primary-accent">
       <div className="logo-container h-12 w-40">
@@ -87,7 +87,7 @@ export const Header = () => {
             />
           </svg>
           <span className="absolute bottom-full mb-2 hidden group-hover:block bg-black text-white text-xs p-2 rounded">
-            {data?.name}
+            {loggedInUser?.name}
           </span>
         </div>
       </div>
