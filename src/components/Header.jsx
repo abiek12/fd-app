@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../utils/constants";
+import { useContext } from "react";
+import userContext from "../utils/userContext";
 
 export const Header = () => {
+  const { loggedInUser } = useContext(userContext);
   return (
     <header className="header flex justify-between items-center px-47 py-10 bg-primary-accent">
       <div className="logo-container h-12 w-40">
@@ -56,7 +59,7 @@ export const Header = () => {
           </div>
         </a>
 
-        <div className="nav-item profile">
+        <div className="group relative nav-item profile w-fit">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -83,6 +86,9 @@ export const Header = () => {
               fill="white"
             />
           </svg>
+          <span className="absolute bottom-full mb-2 hidden group-hover:block bg-black text-white text-xs p-2 rounded">
+            {loggedInUser.name}
+          </span>
         </div>
       </div>
     </header>
