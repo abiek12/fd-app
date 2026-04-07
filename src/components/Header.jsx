@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../utils/constants";
 import { useContext } from "react";
-import userContext from "../utils/userContext";
+import UserContext from "../utils/UserContext";
 
 export const Header = () => {
-  const { loggedInUser } = useContext(userContext);
+  const { loggedInUser } = useContext(UserContext);
   return (
     <header className="header flex justify-between items-center px-47 py-10 bg-primary-accent">
       <div className="logo-container h-12 w-40">

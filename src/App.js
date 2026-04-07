@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { lazy, Suspense } from "react";
+import UserContext from "./utils/UserContext";
 
 // App layout component
 const AppLayout = () => {
@@ -18,11 +19,13 @@ const AppLayout = () => {
 
   const shouldRenderFooter = !currentPath.startsWith("/restaurant");
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-      {shouldRenderFooter && <Footer />}
-    </div>
+    <UserContext.Provider>
+      <div className="app">
+        <Header />
+        <Outlet />
+        {shouldRenderFooter && <Footer />}
+      </div>
+    </UserContext.Provider>
   );
 };
 
