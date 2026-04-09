@@ -18,6 +18,8 @@
   /* Accent Colors */
   --color-primary-accent: rgb(255, 82, 0);
   --color-secondary-accent: rgb(9, 120, 9);
+  --color-tertiary-accent: #1ba672;
+  --color-tertiary-hover-accent: #0a965f;
 
   /* Font */
   --font-primary: Gilroy, Arial, "Helvetica Neue", sans-serif;
