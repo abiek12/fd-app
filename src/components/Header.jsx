@@ -67,7 +67,7 @@ export const Header = () => {
           <Link className="nav-item" to={"/cart"}>
             <ShoppingCartSimpleIcon size={32} color="#ffffff" />
             {cart.items.length > 0 && (
-              <div className="item-count px-2 text-sm bg-white rounded-full text-center absolute right-14 bottom-7">
+              <div className="item-count px-2 text-black text-sm bg-white rounded-full text-center absolute right-14 bottom-7">
                 {cart.items.length}
               </div>
             )}
