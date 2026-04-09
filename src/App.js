@@ -11,6 +11,8 @@ import {
 import { Footer } from "./components/Footer";
 import { lazy, Suspense, use, useEffect, useState } from "react";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 // App layout component
 const AppLayout = () => {
@@ -28,13 +30,15 @@ const AppLayout = () => {
 
   const shouldRenderFooter = !currentPath.startsWith("/restaurant");
   return (
-    <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-        {shouldRenderFooter && <Footer />}
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+          {shouldRenderFooter && <Footer />}
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
