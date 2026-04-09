@@ -10,8 +10,8 @@ export const Header = () => {
   const cart = useSelector((state) => state.cart);
 
   return (
-    <header className="header flex justify-between items-center px-47 py-10 bg-primary-accent">
-      <div className="logo-container h-12 w-40">
+    <header className="header fixed top-0 left-0 w-full z-50 flex justify-between items-center px-47 py-10 bg-primary-accent">
+      <div className="logo-container h-10 w-40">
         <Link to="/">
           <img
             alt=""

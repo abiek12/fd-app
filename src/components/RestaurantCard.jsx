@@ -24,7 +24,7 @@ export const RestaurantCard = (props) => {
           className="restaurant w-full h-full"
           src={`${CDN_URL}/${cloudinaryImageId}`}
         />
-        <div className="offer absolute bottom-0 p-4 z-99">
+        <div className="offer absolute bottom-0 p-4 z-40">
           {aggregatedOffer?.header && (
             <div className="offer-head">{aggregatedOffer?.header}</div>
           )}
@@ -93,11 +93,11 @@ export const withFoodTypeLabel = (RestaurantCard) => {
     return (
       <div className="relative">
         {veg ? (
-          <h1 className="absolute top-2 z-99 text-sm font-semibold bg-black px-6 py-1 text-white rounded-lg">
+          <h1 className="absolute top-2 z-40 text-sm font-semibold bg-black px-6 py-1 text-white rounded-lg">
             Veg
           </h1>
         ) : (
-          <h1 className="absolute top-2 z-99 text-sm font-semibold bg-black px-6 py-1 text-white rounded-lg">
+          <h1 className="absolute top-2 z-40 text-sm font-semibold bg-black px-6 py-1 text-white rounded-lg">
             Non-Veg
           </h1>
         )}

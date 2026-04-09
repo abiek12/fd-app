@@ -32,7 +32,7 @@ const AppLayout = () => {
   return (
     <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
-        <div className="app">
+        <div className="app mt-16">
           <Header />
           <Outlet />
           {shouldRenderFooter && <Footer />}
