@@ -3,9 +3,12 @@ import { LOGO_URL } from "../utils/constants";
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
 import { ShoppingCartSimpleIcon } from "@phosphor-icons/react";
+import { useSelector } from "react-redux";
 
 export const Header = () => {
   const { loggedInUser } = useContext(UserContext);
+  const cart = useSelector((state) => state.cart);
+
   return (
     <header className="header flex justify-between items-center px-47 py-10 bg-primary-accent">
       <div className="logo-container h-12 w-40">
@@ -62,9 +65,11 @@ export const Header = () => {
 
         <div className="cart">
           <ShoppingCartSimpleIcon size={32} color="#ffffff" />
-          <div className="item-count px-2 bg-white rounded-full text-center absolute right-12 bottom-7">
-            2
-          </div>
+          {cart.items.length > 0 && (
+            <div className="item-count px-2 text-sm bg-white rounded-full text-center absolute right-14 bottom-7">
+              {cart.items.length}
+            </div>
+          )}
         </div>
 
         <div className="group relative nav-item profile w-fit">
