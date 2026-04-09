@@ -64,12 +64,14 @@ export const Header = () => {
         </a>
 
         <div className="cart">
-          <ShoppingCartSimpleIcon size={32} color="#ffffff" />
-          {cart.items.length > 0 && (
-            <div className="item-count px-2 text-sm bg-white rounded-full text-center absolute right-14 bottom-7">
-              {cart.items.length}
-            </div>
-          )}
+          <Link className="nav-item" to={"/cart"}>
+            <ShoppingCartSimpleIcon size={32} color="#ffffff" />
+            {cart.items.length > 0 && (
+              <div className="item-count px-2 text-sm bg-white rounded-full text-center absolute right-14 bottom-7">
+                {cart.items.length}
+              </div>
+            )}
+          </Link>
         </div>
 
         <div className="group relative nav-item profile w-fit">
