@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { LOGO_URL } from "../utils/constants";
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
+import { ShoppingCartSimpleIcon } from "@phosphor-icons/react";
 
 export const Header = () => {
   const { loggedInUser } = useContext(UserContext);
@@ -20,7 +21,7 @@ export const Header = () => {
         </Link>
       </div>
 
-      <div className="nav-container flex justify-evenly items-center gap-8">
+      <div className="nav-container flex justify-evenly items-center gap-8 relative">
         <div className="contact">
           <Link className="nav-item" to="/contact">
             Contact
@@ -58,6 +59,13 @@ export const Header = () => {
             </svg>
           </div>
         </a>
+
+        <div className="cart">
+          <ShoppingCartSimpleIcon size={32} color="#ffffff" />
+          <div className="item-count px-2 bg-white rounded-full text-center absolute right-12 bottom-7">
+            2
+          </div>
+        </div>
 
         <div className="group relative nav-item profile w-fit">
           <svg
