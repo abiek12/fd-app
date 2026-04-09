@@ -1,7 +1,20 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
 
 const MenuItem = (props) => {
   const item = props?.item?.card?.info;
+  const dispatch = useDispatch();
+
+  const handleAddItem = () => {
+    dispatch(
+      addItem({
+        id: item.id,
+        name: item.name,
+      })
+    );
+  };
+
   return (
     <div className="menu-item-container flex justify-between items-start py-4 px-0 ">
       <div className="menu-item-left flex flex-col gap-2">
@@ -68,7 +81,10 @@ const MenuItem = (props) => {
             alt="item-logo"
           />
         </div>
-        <button className="add-to-cart-btn cursor-pointer absolute top-32 py-[0.8rem] px-12 rounded-lg border border-solid border-off-white bg-primary-bg text-[1.05rem] font-semibold text-secondary-accent hover:bg-off-white-bg hover:border-none">
+        <button
+          onClick={handleAddItem}
+          className="add-to-cart-btn cursor-pointer absolute top-32 py-[0.8rem] px-12 rounded-lg border border-solid border-off-white bg-primary-bg text-[1.05rem] font-semibold text-secondary-accent hover:bg-off-white-bg hover:border-none"
+        >
           ADD
         </button>
       </div>
