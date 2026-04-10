@@ -63,10 +63,10 @@ const Cart = () => {
                 <div className="price">₹135</div>
               </div>
             </div>
-            <div className="recipie-suggestion w-1/2 py-4">
+            <div className="recipie-suggestion w-1/2 h-full py-4">
               <input
                 type="text"
-                className="bg-gray-200 p-4 placeholder:text-sm w-full"
+                className="bg-gray-200 p-4 placeholder:text-sm w-full h-full"
                 placeholder="Any suggestions? We will pass it on to chef."
               />
             </div>
