@@ -4,7 +4,7 @@ const Cart = () => {
   return (
     <div className="cart-section h-dvh w-full px-47 py-30 bg-background-gray flex gap-10">
       <div className="left-container w-3/4 flex flex-col gap-6">
-        <div className="items-container flex bg-white p-10">
+        <div className="items-container bg-white p-10 flex flex-col gap-8">
           <div className="restaurant-details flex gap-4">
             <div className="image-container w-24 h-24">
               <img
@@ -13,19 +13,58 @@ const Cart = () => {
                 className="icon w-full h-full"
               />
             </div>
-            <div className="">
+            <div className="border-b-4 border-solid border-gray-400">
               <h1 className="restuarant-name text-3xl font-semibold">
                 Palooda Desserts Club
               </h1>
               <h2 className="location text-xl font-normal">Thaliparamba</h2>
             </div>
           </div>
-          <div className="items">
-            <div className="item-details"></div>
-            <div className="count"></div>
-            <div className="price"></div>
+          <div className="item-list w-1/2">
+            <div className="item flex justify-start items-center gap-12 py-4">
+              <div className="item-details">
+                <div className="name text-base font-semibold">Kitkat shake</div>
+                <div className="desc text-sm font-normal text-gray-600">
+                  Kitkat milk shake
+                </div>
+              </div>
+              <div className="update-count flex justify-between items-center border border-solid border-gray-400">
+                <button className="border-r border-solid border-gray-300 px-3 py-1 cursor-pointer text-red-700">
+                  -
+                </button>
+                <div className="count px-3 py-1">1</div>
+                <button className="border-l border-solid border-gray-300 px-3 py-1 cursor-pointer text-green-700">
+                  +
+                </button>
+              </div>
+              <div className="price">₹135</div>
+            </div>
+            <div className="item flex justify-start items-center gap-12 py-4">
+              <div className="item-details">
+                <div className="name text-base font-semibold">Kitkat shake</div>
+                <div className="desc text-sm font-normal text-gray-600">
+                  Kitkat milk shake
+                </div>
+              </div>
+              <div className="update-count flex justify-between items-center border border-solid border-gray-400">
+                <button className="border-r border-solid border-gray-300 px-3 py-1 cursor-pointer text-red-700">
+                  -
+                </button>
+                <div className="count px-3 py-1">1</div>
+                <button className="border-l border-solid border-gray-300 px-3 py-1 cursor-pointer text-green-700">
+                  +
+                </button>
+              </div>
+              <div className="price">₹135</div>
+            </div>
           </div>
-          <div className="recipie-suggestion"></div>
+          <div className="recipie-suggestion">
+            <input
+              type="text"
+              className="bg-gray-200 p-4 placeholder:text-sm"
+              placeholder="Any suggestions? We will pass it on..."
+            />
+          </div>
         </div>
         <div className="payment-container bg-white p-10 flex flex-col gap-8">
           <h1 className="text-xl font-bold">Choose payment method</h1>
