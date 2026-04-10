@@ -20,50 +20,56 @@ const Cart = () => {
               <h2 className="location text-xl font-normal">Thaliparamba</h2>
             </div>
           </div>
-          <div className="item-list w-1/2">
-            <div className="item flex justify-start items-center gap-12 py-4">
-              <div className="item-details">
-                <div className="name text-base font-semibold">Kitkat shake</div>
-                <div className="desc text-sm font-normal text-gray-600">
-                  Kitkat milk shake
+          <div className="item-details flex gap-8 justify-start items-start">
+            <div className="item-list w-1/2">
+              <div className="item flex justify-start items-center gap-12 py-4">
+                <div className="item-details">
+                  <div className="name text-base font-semibold">
+                    Kitkat shake
+                  </div>
+                  <div className="desc text-sm font-normal text-gray-600">
+                    Kitkat milk shake
+                  </div>
                 </div>
-              </div>
-              <div className="update-count flex justify-between items-center border border-solid border-gray-400">
-                <button className="border-r border-solid border-gray-300 px-3 py-1 cursor-pointer text-red-700">
-                  -
-                </button>
-                <div className="count px-3 py-1">1</div>
-                <button className="border-l border-solid border-gray-300 px-3 py-1 cursor-pointer text-green-700">
-                  +
-                </button>
-              </div>
-              <div className="price">₹135</div>
-            </div>
-            <div className="item flex justify-start items-center gap-12 py-4">
-              <div className="item-details">
-                <div className="name text-base font-semibold">Kitkat shake</div>
-                <div className="desc text-sm font-normal text-gray-600">
-                  Kitkat milk shake
+                <div className="update-count flex justify-between items-center border border-solid border-gray-400">
+                  <button className="border-r border-solid border-gray-300 px-3 py-1 cursor-pointer text-red-700">
+                    -
+                  </button>
+                  <div className="count px-3 py-1">1</div>
+                  <button className="border-l border-solid border-gray-300 px-3 py-1 cursor-pointer text-green-700">
+                    +
+                  </button>
                 </div>
+                <div className="price">₹135</div>
               </div>
-              <div className="update-count flex justify-between items-center border border-solid border-gray-400">
-                <button className="border-r border-solid border-gray-300 px-3 py-1 cursor-pointer text-red-700">
-                  -
-                </button>
-                <div className="count px-3 py-1">1</div>
-                <button className="border-l border-solid border-gray-300 px-3 py-1 cursor-pointer text-green-700">
-                  +
-                </button>
+              <div className="item flex justify-start items-center gap-12 py-4">
+                <div className="item-details">
+                  <div className="name text-base font-semibold">
+                    Kitkat shake
+                  </div>
+                  <div className="desc text-sm font-normal text-gray-600">
+                    Kitkat milk shake
+                  </div>
+                </div>
+                <div className="update-count flex justify-between items-center border border-solid border-gray-400">
+                  <button className="border-r border-solid border-gray-300 px-3 py-1 cursor-pointer text-red-700">
+                    -
+                  </button>
+                  <div className="count px-3 py-1">1</div>
+                  <button className="border-l border-solid border-gray-300 px-3 py-1 cursor-pointer text-green-700">
+                    +
+                  </button>
+                </div>
+                <div className="price">₹135</div>
               </div>
-              <div className="price">₹135</div>
             </div>
-          </div>
-          <div className="recipie-suggestion">
-            <input
-              type="text"
-              className="bg-gray-200 p-4 placeholder:text-sm"
-              placeholder="Any suggestions? We will pass it on..."
-            />
+            <div className="recipie-suggestion w-1/2 py-4">
+              <input
+                type="text"
+                className="bg-gray-200 p-4 placeholder:text-sm w-full"
+                placeholder="Any suggestions? We will pass it on to chef."
+              />
+            </div>
           </div>
         </div>
         <div className="payment-container bg-white p-10 flex flex-col gap-8">
