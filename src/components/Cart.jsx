@@ -1,4 +1,4 @@
-import { PencilIcon } from "@phosphor-icons/react";
+import { PencilIcon, SealPercentIcon } from "@phosphor-icons/react";
 
 const Cart = () => {
   return (
@@ -34,7 +34,7 @@ const Cart = () => {
           </button>
         </div>
       </div>
-      <div className="right-container bg-white px-8 py-10 w-1/4 flex flex-col gap-2">
+      <div className="right-container bg-white px-8 py-10 w-1/4 flex flex-col gap-6">
         <div className="delivery-address flex flex-col gap-2">
           <div className="heading flex justify-between items-center">
             <h1 className="text-lg font-bold">Delivery Address</h1>
@@ -48,7 +48,10 @@ const Cart = () => {
           </div>
           <div className="estimated-time text-sm font-medium">21 MINS</div>
         </div>
-        <div className="apply-coupon"></div>
+        <div className="apply-coupon flex justify-start items-center gap-3 p-4 border border-dashed border-gray-400 cursor-pointer">
+          <SealPercentIcon size={24} color="#77767b" />
+          <p className="text-sm text-gray-700 font-medium">Apply Coupon</p>
+        </div>
         <div className="bill-details">
           <h4>Bill Details</h4>
           <div className="item-total">
