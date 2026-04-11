@@ -43,6 +43,11 @@ const RestaurantMenu = () => {
     return <h1>Ohh hoh! Something went wrong.</h1>;
   }
 
+  const restuarant = {
+    restuarantName: apiRes.singleItem?.name,
+    restuarantLocation: apiRes.singleItem?.areaName,
+  };
+
   return (
     <div className="restaurant-menu-section px-130 py-30 flex flex-col justify-center gap-6">
       <h1 className="restuarant-name text-3xl font-bold">
@@ -264,7 +269,7 @@ const RestaurantMenu = () => {
                   item?.card?.card?.itemCards.map((i, idx) => (
                     <div key={idx} className="ind-item">
                       <hr className="text-tertiary-bg my-8 mx-0" />
-                      <MenuItem item={i} />
+                      <MenuItem item={i} restuarant={restuarant} />
                     </div>
                   ))}
               </div>

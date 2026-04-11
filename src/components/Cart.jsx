@@ -1,6 +1,10 @@
 import { PencilIcon, SealPercentIcon } from "@phosphor-icons/react";
+import { useSelector } from "react-redux";
+import { CDN_URL } from "../utils/constants";
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cart);
+  console.log("cart:", cart);
   return (
     <div className="cart-section h-dvh w-full px-47 py-30 bg-background-gray flex gap-10">
       <div className="left-container w-3/4 flex flex-col gap-6">
@@ -8,60 +12,51 @@ const Cart = () => {
           <div className="restaurant-details flex gap-4">
             <div className="image-container w-24 h-24">
               <img
-                src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/58f0bc7f36111bdcba55b44313e6aa8f"
+                src={`${CDN_URL}/${cart?.items[0]?.imageId}`}
                 alt=""
                 className="icon w-full h-full"
               />
             </div>
             <div className="border-b-4 border-solid border-gray-400">
               <h1 className="restuarant-name text-3xl font-semibold">
-                Palooda Desserts Club
+                {cart?.items[0]?.restuarantName}
               </h1>
-              <h2 className="location text-xl font-normal">Thaliparamba</h2>
+              <h2 className="location text-xl font-normal">
+                {cart?.items[0]?.restuarantName}
+              </h2>
             </div>
           </div>
           <div className="item-details flex gap-8 justify-start items-start">
-            <div className="item-list w-1/2">
-              <div className="item flex justify-start items-center gap-12 py-4">
-                <div className="item-details">
-                  <div className="name text-base font-semibold">
-                    Kitkat shake
+            <div className="items w-1/2">
+              {cart.items.map((i, idx) => {
+                return (
+                  <div
+                    key={idx}
+                    className="item flex justify-start items-center gap-12 py-4"
+                  >
+                    <div className="item-details">
+                      <div className="name text-base font-semibold">
+                        {i.name}
+                      </div>
+                      <div className="desc text-sm font-normal text-gray-600">
+                        {i.description}
+                      </div>
+                    </div>
+                    <div className="update-count flex justify-between items-center border border-solid border-gray-400">
+                      <button className="border-r border-solid border-gray-300 px-3 py-1 cursor-pointer text-red-700">
+                        -
+                      </button>
+                      <div className="count px-3 py-1">1</div>
+                      <button className="border-l border-solid border-gray-300 px-3 py-1 cursor-pointer text-green-700">
+                        +
+                      </button>
+                    </div>
+                    <div className="price">
+                      ₹{(i?.price || i?.defaultPrice) / 100}
+                    </div>
                   </div>
-                  <div className="desc text-sm font-normal text-gray-600">
-                    Kitkat milk shake
-                  </div>
-                </div>
-                <div className="update-count flex justify-between items-center border border-solid border-gray-400">
-                  <button className="border-r border-solid border-gray-300 px-3 py-1 cursor-pointer text-red-700">
-                    -
-                  </button>
-                  <div className="count px-3 py-1">1</div>
-                  <button className="border-l border-solid border-gray-300 px-3 py-1 cursor-pointer text-green-700">
-                    +
-                  </button>
-                </div>
-                <div className="price">₹135</div>
-              </div>
-              <div className="item flex justify-start items-center gap-12 py-4">
-                <div className="item-details">
-                  <div className="name text-base font-semibold">
-                    Kitkat shake
-                  </div>
-                  <div className="desc text-sm font-normal text-gray-600">
-                    Kitkat milk shake
-                  </div>
-                </div>
-                <div className="update-count flex justify-between items-center border border-solid border-gray-400">
-                  <button className="border-r border-solid border-gray-300 px-3 py-1 cursor-pointer text-red-700">
-                    -
-                  </button>
-                  <div className="count px-3 py-1">1</div>
-                  <button className="border-l border-solid border-gray-300 px-3 py-1 cursor-pointer text-green-700">
-                    +
-                  </button>
-                </div>
-                <div className="price">₹135</div>
-              </div>
+                );
+              })}
             </div>
             <div className="recipie-suggestion w-1/2 h-full py-4">
               <input

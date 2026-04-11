@@ -4,13 +4,15 @@ import { addItem } from "../utils/cartSlice";
 
 const MenuItem = (props) => {
   const item = props?.item?.card?.info;
+  const restuarant = props?.restuarant;
+
   const dispatch = useDispatch();
 
   const handleAddItem = () => {
     dispatch(
       addItem({
-        id: item.id,
-        name: item.name,
+        ...item,
+        ...restuarant,
       })
     );
   };
