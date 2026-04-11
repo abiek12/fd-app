@@ -33,14 +33,14 @@ const Cart = () => {
             </div>
           </div>
           <div className="item-details flex gap-8 justify-start items-start">
-            <div className="items w-1/2">
+            <div className="items w-1/2 max-h-80 overflow-y-scroll pr-8">
               {cart.items.map((i, idx) => {
                 return (
                   <div
                     key={idx}
-                    className="item flex justify-start items-center gap-12 py-4"
+                    className="item flex justify-between items-center gap-12 py-4"
                   >
-                    <div className="item-details">
+                    <div className="item-details flex-1 min-w-0">
                       <div className="name text-base font-semibold">
                         {i.name}
                       </div>
@@ -48,7 +48,7 @@ const Cart = () => {
                         {i.description}
                       </div>
                     </div>
-                    <div className="update-count flex justify-between items-center border border-solid border-gray-400">
+                    <div className="update-count w-28 flex justify-between items-center border border-solid border-gray-400">
                       <button className="border-r border-solid border-gray-300 px-3 py-1 cursor-pointer text-red-700">
                         -
                       </button>
@@ -57,14 +57,14 @@ const Cart = () => {
                         +
                       </button>
                     </div>
-                    <div className="price">
+                    <div className="price w-20 text-end">
                       ₹{(i?.price || i?.defaultPrice) / 100}
                     </div>
                   </div>
                 );
               })}
             </div>
-            <div className="recipie-suggestion w-1/2 h-full py-4">
+            <div className="recipie-suggestion w-1/2 min-h-1/4 max-h-1/1 py-4">
               <input
                 type="text"
                 className="bg-gray-200 p-4 placeholder:text-sm w-full h-full"
