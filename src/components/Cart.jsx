@@ -4,7 +4,13 @@ import { CDN_URL } from "../utils/constants";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-  console.log("cart:", cart);
+  const totalPrice =
+    cart.items.reduce((acc, i) => {
+      return acc + (i.price || i.defaultPrice || 0);
+    }, 0) / 100;
+  const deliveryCharge = 50;
+  const gst = 25;
+
   return (
     <div className="cart-section h-dvh w-full px-47 py-30 bg-background-gray flex gap-10">
       <div className="left-container w-3/4 flex flex-col gap-6">
@@ -101,21 +107,21 @@ const Cart = () => {
             <h4 className="text-sm font-semibold">Bill Details</h4>
             <div className="item-total flex justify-between items-center text-sm text-gray-500 font-normal">
               <p className="">Item Total</p>
-              <p className="">₹250</p>
+              <p className="">₹{totalPrice}</p>
             </div>
             <div className="delivery-fee flex justify-between items-center text-sm text-gray-500 font-normal">
               <p>Delivery Fee | 2.1 kms</p>
-              <p>₹51</p>
+              <p>₹{deliveryCharge}</p>
             </div>
             <hr className="my-2 border-t border-dashed border-gray-300" />
             <div className="gst-other-charges flex justify-between items-center text-sm text-gray-500 font-normal">
               <p>GST & Other Charges</p>
-              <p>₹50</p>
+              <p>₹{gst}</p>
             </div>
             <hr className="my-3 border-t-2 border-gray-600" />
             <div className="grand-total flex justify-between items-center text-sm font-semibold">
               <p>TO PAY</p>
-              <p>₹351</p>
+              <p>₹{totalPrice + deliveryCharge + gst}</p>
             </div>
           </div>
         </div>
