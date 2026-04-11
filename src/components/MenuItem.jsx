@@ -12,6 +12,7 @@ const MenuItem = (props) => {
     dispatch(
       addItem({
         ...item,
+        count: 1,
         ...restuarant,
       })
     );

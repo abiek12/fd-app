@@ -1,9 +1,22 @@
 import { PencilIcon, SealPercentIcon } from "@phosphor-icons/react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { decreaseCount, increaseCount } from "../utils/cartSlice";
 
 const Cart = () => {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
+
+  const handleDecreaseCount = (targetId) => {
+    dispatch(increaseCount(targetId));
+  };
+
+  const handleIncreaseCount = (targetId) => {
+    dispatch(decreaseCount(targetId));
+  };
+
+  console.log("cart:", cart);
+
   const totalPrice =
     cart.items.reduce((acc, i) => {
       return acc + (i.price || i.defaultPrice || 0);
@@ -49,11 +62,21 @@ const Cart = () => {
                       </div>
                     </div>
                     <div className="update-count w-28 flex justify-between items-center border border-solid border-gray-400">
-                      <button className="border-r border-solid border-gray-300 px-3 py-1 cursor-pointer text-red-700">
+                      <button
+                        onClick={() => {
+                          handleDecreaseCount(i.id);
+                        }}
+                        className="border-r border-solid border-gray-300 px-3 py-1 cursor-pointer text-red-700 hover:bg-red-100"
+                      >
                         -
                       </button>
-                      <div className="count px-3 py-1">1</div>
-                      <button className="border-l border-solid border-gray-300 px-3 py-1 cursor-pointer text-green-700">
+                      <div className="count px-3 py-1">{i?.count}</div>
+                      <button
+                        onClick={() => {
+                          handleIncreaseCount(i.id);
+                        }}
+                        className="border-l border-solid border-gray-300 px-3 py-1 cursor-pointer text-green-700 hover:bg-green-100"
+                      >
                         +
                       </button>
                     </div>
