@@ -3,7 +3,22 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: [],
+    items: [
+      {
+        id: 1,
+        name: "Pizza",
+        description: "Delicious cheese pizza",
+        price: 999,
+        count: 1,
+      },
+      {
+        id: 2,
+        name: "Burger",
+        description: "Juicy beef burger",
+        price: 499,
+        count: 1,
+      },
+    ],
   },
   reducers: {
     addItem: (state, action) => {
@@ -20,17 +35,23 @@ const cartSlice = createSlice({
       state.items = [];
     },
     increaseCount: (state, action) => {
-      console.log("at store", action.payload);
       const item = state.items.find((i) => i.id === action.payload);
       if (item) {
         item.count = (item.count || 1) + 1;
       }
     },
     decreaseCount: (state, action) => {
-      console.log("at store", action.payload);
       const item = state.items.find((i) => i.id === action.payload);
       if (item) {
-        item.count = (item.count || 1) - 1;
+        if (item.count <= 1) {
+          // Remove item from cart
+          const idx = state.items.findIndex((i) => i.id === action.payload);
+          if (idx !== -1) {
+            state.items.splice(idx, 1);
+          }
+          return;
+        }
+        item.count = (item.count || 0) - 1;
       }
     },
   },

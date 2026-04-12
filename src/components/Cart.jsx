@@ -8,14 +8,12 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);
 
   const handleDecreaseCount = (targetId) => {
-    dispatch(increaseCount(targetId));
-  };
-
-  const handleIncreaseCount = (targetId) => {
     dispatch(decreaseCount(targetId));
   };
 
-  console.log("cart:", cart);
+  const handleIncreaseCount = (targetId) => {
+    dispatch(increaseCount(targetId));
+  };
 
   const totalPrice =
     cart.items.reduce((acc, i) => {
