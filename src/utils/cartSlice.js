@@ -3,26 +3,17 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: [
-      {
-        id: 1,
-        name: "Pizza",
-        description: "Delicious cheese pizza",
-        price: 999,
-        count: 1,
-      },
-      {
-        id: 2,
-        name: "Burger",
-        description: "Juicy beef burger",
-        price: 499,
-        count: 1,
-      },
-    ],
+    items: [],
   },
   reducers: {
     addItem: (state, action) => {
-      state.items.push(action.payload);
+      console.log(action.payload);
+      const exising = state.items.find((i) => i.id === action.payload.id);
+      if (exising) {
+        exising.count++;
+      } else {
+        state.items.push(action.payload);
+      }
     },
     removeItem: (state, action) => {
       // Find out the index of item with id/name
