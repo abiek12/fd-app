@@ -2,6 +2,7 @@ import { PencilIcon, SealPercentIcon } from "@phosphor-icons/react";
 import { useDispatch, useSelector } from "react-redux";
 import { CDN_URL } from "../utils/constants";
 import { decreaseCount, increaseCount } from "../utils/cartSlice";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,33 @@ const Cart = () => {
     }, 0) / 100;
   const deliveryCharge = 50;
   const gst = 25;
+
+  if (cart.items.length < 1) {
+    return (
+      <div className="empty-cart h-dvh w-full flex flex-col justify-center items-center gap-2">
+        <div className="w-60 h-60">
+          <img
+            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0"
+            alt="Empty cart image"
+            className="w-full h-full"
+          />
+        </div>
+        <div className="mt-6">
+          <h1 className="text-2xl text-gray-800 font-semibold">
+            Your cart is empty
+          </h1>
+        </div>
+        <div className="text-sm text-gray-600">
+          <p>You can go to home page to view more restaurants</p>
+        </div>
+        <Link className="" to="/">
+          <button className="px-5 py-3 bg-primary-accent text-white text-sm font-semibold mt-8 cursor-pointer">
+            SEE RESTAURANTS NEAR YOU
+          </button>
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="cart-section h-dvh w-full px-47 py-30 bg-background-gray flex gap-10">
