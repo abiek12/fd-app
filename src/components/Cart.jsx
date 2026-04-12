@@ -17,7 +17,7 @@ const Cart = () => {
 
   const totalPrice =
     cart.items.reduce((acc, i) => {
-      return acc + (i.price || i.defaultPrice || 0);
+      return acc + (i.price || i.defaultPrice || 0) * i.count;
     }, 0) / 100;
   const deliveryCharge = 50;
   const gst = 25;
@@ -79,7 +79,7 @@ const Cart = () => {
                       </button>
                     </div>
                     <div className="price w-20 text-end">
-                      ₹{(i?.price || i?.defaultPrice) / 100}
+                      ₹{((i?.price || i?.defaultPrice) / 100) * i.count}
                     </div>
                   </div>
                 );
