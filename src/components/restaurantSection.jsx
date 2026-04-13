@@ -135,7 +135,7 @@ export const RestaurantSection = () => {
   return (
     <section className="restaurant-section px-47 pb-30 flex flex-col gap-8">
       <h2 className="sections-title text-2xl font-semibold">
-        Restaurants with online food delivery in {"Kochi"}
+        Restaurants with online food delivery
       </h2>
       <div className="filter-container flex justify-start items-center gap-4">
         <div className="select-container">
