@@ -7,7 +7,6 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      console.log(action.payload);
       const exising = state.items.find((i) => i.id === action.payload.id);
       if (exising) {
         exising.count++;
@@ -17,7 +16,7 @@ const cartSlice = createSlice({
     },
     removeItem: (state, action) => {
       // Find out the index of item with id/name
-      const idx = state.items.findIndex((i) => i.id === action.payload.id);
+      const idx = state.items.findIndex((i) => i.id === action.payload);
       if (idx === -1) return;
       state.items.splice(idx, 1);
     },

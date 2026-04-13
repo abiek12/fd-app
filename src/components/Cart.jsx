@@ -1,7 +1,7 @@
-import { PencilIcon, SealPercentIcon } from "@phosphor-icons/react";
+import { PencilIcon, SealPercentIcon, TrashIcon } from "@phosphor-icons/react";
 import { useDispatch, useSelector } from "react-redux";
 import { CDN_URL } from "../utils/constants";
-import { decreaseCount, increaseCount } from "../utils/cartSlice";
+import { decreaseCount, increaseCount, removeItem } from "../utils/cartSlice";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
@@ -14,6 +14,10 @@ const Cart = () => {
 
   const handleIncreaseCount = (targetId) => {
     dispatch(increaseCount(targetId));
+  };
+
+  const removeItemFromCart = (targetId) => {
+    dispatch(removeItem(targetId));
   };
 
   const totalPrice =
@@ -72,7 +76,7 @@ const Cart = () => {
             </div>
           </div>
           <div className="item-details flex gap-8 justify-start items-start">
-            <div className="items w-1/2 max-h-80 overflow-y-scroll pr-8">
+            <div className="items flex-1 max-h-80 overflow-y-scroll pr-8">
               {cart.items.map((i, idx) => {
                 return (
                   <div
@@ -109,11 +113,21 @@ const Cart = () => {
                     <div className="price w-20 text-end">
                       ₹{((i?.price || i?.defaultPrice) / 100) * i.count}
                     </div>
+                    <div className="remove w-6">
+                      <button
+                        className="cursor-pointer"
+                        onClick={() => {
+                          removeItemFromCart(i.id);
+                        }}
+                      >
+                        <TrashIcon size={20} color="#c01c28" />
+                      </button>
+                    </div>
                   </div>
                 );
               })}
             </div>
-            <div className="recipie-suggestion w-1/2 min-h-1/4 max-h-1/1 py-4">
+            <div className="recipie-suggestion w-80 min-h-1/4 max-h-1/1 py-4">
               <input
                 type="text"
                 className="bg-gray-200 p-4 placeholder:text-sm w-full h-full"
