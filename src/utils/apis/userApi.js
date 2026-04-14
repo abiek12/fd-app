@@ -1,21 +1,21 @@
-import { api } from "./api";
+// import { api } from "./api";
 
-export const userApi = api.injectEndpoints({
-  endpoints: (builder) => ({
-    getUser: builder.query({
-      query: () => "/user",
-      providesTags: ["User"],
-    }),
+// export const userApi = api.injectEndpoints({
+//   endpoints: (builder) => ({
+//     getUser: builder.query({
+//       query: () => "/user",
+//       providesTags: ["User"],
+//     }),
 
-    updateUser: builder.mutation({
-      query: (body) => ({
-        url: "/user",
-        method: "PUT",
-        body,
-      }),
-      invalidatesTags: ["User"], // invalidate apis under User tags when each update apis
-    }),
-  }),
-});
+//     updateUser: builder.mutation({
+//       query: (body) => ({
+//         url: "/user",
+//         method: "PUT",
+//         body,
+//       }),
+//       invalidatesTags: ["User"], // invalidate apis under User tags when each update apis
+//     }),
+//   }),
+// });
 
-export const { useGetUserQuery, useUpdateUserMutation } = userApi;
+// export const { useGetUserQuery, useUpdateUserMutation } = userApi;
