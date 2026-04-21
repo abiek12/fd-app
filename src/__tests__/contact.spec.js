@@ -1,9 +1,9 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import About from "../components/About";
+import Contact from "../components/Contact";
 
 test("Should load about-us component", () => {
-  render(<About />);
+  render(<Contact />);
 
   const heading = screen.getByRole("heading");
 
