@@ -17,4 +17,16 @@ describe("Header component test cases:", () => {
     const items = screen.getAllByRole("link");
     expect(items.length).toBe(4);
   });
+
+  it("Should load header component with contact", () => {
+    render(
+      <BrowserRouter>
+        <Provider store={appStore}>
+          <Header />
+        </Provider>
+      </BrowserRouter>
+    );
+    const item = screen.getByText("Contact");
+    expect(item).toBeInTheDocument();
+  });
 });
