@@ -81,6 +81,7 @@ export const Header = () => {
             height="40"
             viewBox="0 0 40 40"
             fill="none"
+            data-testid="profile-icon"
           >
             <path
               fillRule="evenodd"

@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { Header } from "../components/Header";
 import appStore from "../utils/appStore";
@@ -28,5 +28,19 @@ describe("Header component test cases:", () => {
     );
     const item = screen.getByText("Contact");
     expect(item).toBeInTheDocument();
+  });
+
+  it("Should shows the user name on hover profile icon", () => {
+    render(
+      <BrowserRouter>
+        <Provider store={appStore}>
+          <Header />
+        </Provider>
+      </BrowserRouter>
+    );
+
+    const icon = screen.getByTestId("profile-icon");
+    fireEvent.mouseEnter(icon);
+    expect(screen.getByText("Guest")).toBeInTheDocument();
   });
 });
