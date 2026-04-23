@@ -6,6 +6,22 @@ import { Provider } from "react-redux";
 import "@testing-library/jest-dom";
 
 describe("Header component test cases:", () => {
+  beforeAll(() => {
+    console.log("Before all");
+  });
+
+  beforeEach(() => {
+    console.log("Before each");
+  });
+
+  afterAll(() => {
+    console.log("After all");
+  });
+
+  afterEach(() => {
+    console.log("After each");
+  });
+
   it("Should load header component with all links", () => {
     render(
       <BrowserRouter>
